@@ -1,6 +1,5 @@
 package Sanket2;
 
-import java.rmi.UnexpectedException;
 import java.security.Provider.Service;
 import java.util.Scanner;
 
@@ -13,7 +12,7 @@ public class Start {
 		Studentdetailimplement details = new Studentdetailimplement();
 		boolean flag = true ;
 	
-		
+		System.out.println("student operation");
 		while ( flag ) {
 			System.out.println(" + "
 			+ "1.addStudent\n "
