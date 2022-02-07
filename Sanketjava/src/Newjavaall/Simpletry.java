@@ -20,6 +20,7 @@ public class Simpletry {
 			  
 			
 			c= a/b ;
+			a=b/a ;
 			System.out.println( +c);
 			
 			 System.out.println("Do you want to continue press 1 for yes  or 0 for N");
