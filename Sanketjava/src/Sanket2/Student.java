@@ -1,7 +1,26 @@
 package Sanket2;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class Student {
+class CreateObject 
+{
+	public static void main(String[] args) throws FileNotFoundException, CloneNotSupportedException {
+		 
+		Student s1 = new Student ( "sanket" , 858 , "deh ", 2021  ,  5 );
+
+			FileOutputStream fileout = new FileOutputStream("Sanket.ser") ;
+			 Student s3 =  (Student) s1.clone();
+			 
+			
+	}
+}
+
+public class Student implements Cloneable ,Serializable  {
 
 	private String studentName ;
 	private int studentRollnumber;
@@ -9,6 +28,24 @@ public class Student {
 	private int  studentyearOfStudy;
 	private float cgpa;
 
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	 
+	private void writeobject(ObjectOutputStream o) throws IOException 
+	{
+		o.defaultWriteObject(); 
+
+	}
+	
+	private void readobaject(ObjectInputStream i) throws Exception 
+	{
+		i.defaultReadObject(); 
+
+	}
 	/**
 	 * @param studentName
 	 * @param studentRollnumber
